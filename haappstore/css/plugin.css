@@ -1,0 +1,262 @@
+.logo a img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.modal-box {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.modal-box button {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 30px;
+  background-color: #C38154;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  border:none;
+}
+
+.modal-box button:hover {
+  background-color: #884A39;
+}
+
+/* Style for the popup container */
+    .popup-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
+
+    /* Style for the popup content */
+    .popup-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Style for the image */
+    .popup-image {
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    /* Style for the close icon */
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .login-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.login-popup.show {
+    display: block;
+}
+
+.login-popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+}
+
+
+.login-popup-form {
+    margin-top: 20px;
+}
+
+.login-popup-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-popup-form input[type="text"],
+.login-popup-form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-popup-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-popup-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.login-popup-form .forgetmenot {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.login-popup-form .forgetmenot label {
+    font-weight: normal;
+}
+
+.login-popup-form .forgetmenot input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.login-popup-form .message {
+    margin-top: 10px;
+    color: red;
+}
+
+
+.login-popup-content form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-popup-content form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-popup-content form input[type="text"],
+.login-popup-content form input[type="password"] {
+    width: 100%;
+    max-width: 300px; /* Adjust the maximum width as needed */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure the input width includes padding */
+    margin-bottom: 10px; /* Add some spacing between inputs */
+}
+
+.login-popup-content form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-popup-content form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.login-popup-content form .forgetmenot {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.login-popup-content form .forgetmenot label {
+    font-weight: normal;
+}
+
+.login-popup-content form .forgetmenot input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.login-popup-content form .message {
+    margin-top: 10px;
+    color: red;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .logout-btn {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+    
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dropdown .caret {
+    margin-left: 5px;
+}
+
+.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    min-width: 160px;
+    padding: 8px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown .dropdown-menu li {
+    padding: 0 10px;
+}
+
+.dropdown .dropdown-menu li a {
+    display: block;
+    padding: 8px 0;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown .dropdown-menu li a:hover {
+    background-color: #f5f5f5;
+}

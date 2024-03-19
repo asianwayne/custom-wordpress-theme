@@ -1,0 +1,294 @@
+// The user is logged in
+                //send post to the posts endpoint
+                const tagSlugs = tags;
+                const tagIds = [];
+                //send post to the posts endpoint
+
+$.when.apply($, tagSlugs.map(function(slug) {
+  return $.ajax({
+    url: 'https://xmdn.net/wp-json/wp/v2/tags',
+    data: { slug: slug },
+  }).done(function(response) {
+    if (response.length > 0) {
+      tagIds.push(response[0].id);
+    } else {
+      // Create a new tag with the specified slug
+      $.ajax({
+        url: 'https://www.xmdn.net/wp-json/wp/v2/tags',
+        method: 'POST',
+        beforeSend: function(xhr)  {
+          xhr.setRequestHeader('Authorization',`Basic ${encodedCredentials}`);
+        },
+        data: {
+          name: slug,
+          slug: slug
+        },
+      }).done(function(response) {
+        tagIds.push(response.id);
+      }).fail(function(err) {
+        console.log(err);
+      });
+    }
+  }).fail(function(err) {
+    console.log(err);
+  });
+})).done(function(response) {
+  console.log(response);
+  console.log('到底是什么res');
+  // All tag requests have completed
+  // Create a new post with the specified tags
+  $.ajax({
+    url:'https://www.xmdn.net/wp-json/wp/v2/posts',
+    method:'POST',
+    beforeSend: function(xhr)  {
+      xhr.setRequestHeader('Authorization',`Basic ${encodedCredentials}`);
+    },
+    data:{
+      title:title,
+      content:content,
+      tags:tagIds,
+      status:'publish',
+    },
+  }).done(function(response) {
+    console.log('Post created:', response);
+    //setTimeout(function(){location.reload();},1000);
+  });
+
+
+}).fail(function(err) {
+  swal("INTERNAL ERROR");
+});
+
+
+##2 
+//首先验证tags 
+                const tagSlugs = tags;
+                //返回的是['klsadklsad', 'opisdpoisad']
+                const tagIds = [];
+
+
+          $.when.apply($,tagSlugs.map(function(slug) {
+                  return $.ajax({
+              url: 'https://xmdn.net/wp-json/wp/v2/tags',
+              method:'GET',
+              data: { slug: slug },
+              dataType:'json',
+
+            }).done(function(res) {
+              if (res.length > 0) {
+                // 如果tag存在，跟名字符合，存储tagids提交的Tag的id
+                tagIds.push(res[0].id);
+              } else {
+                //如果不存在，发送tags 的post 请求 添加tags 
+                $.ajax({
+        url: 'https://xmdn.net/wp-json/wp/v2/tags',
+        method: 'POST',
+        beforeSend: function(xhr)  {
+          xhr.setRequestHeader('X-WP-Nonce',hastart.nonce_1);
+        },
+        data: {
+          name: slug,
+          slug: slug
+        },
+      }).done(function(response) {
+        tagIds.push(response.id);
+        console.log('success insert the tag');
+        console.log(tagIds);
+      }).fail(function(err) {
+        console.log(err);
+      });
+                
+      }}).fail(
+      //这里是如果get tags失败
+      function(err) {
+        console.log(err);
+
+      });
+})).done(function(res) {
+    //这里是apply 结束返回的res 
+    console.log('you have finished the request');
+    console.log(res);
+    console.log(tagIds);
+    //已经收到了的， 值是[233,233,455] 这种
+    console.log('ends here');
+
+      tagGroup = tagIds;
+    //create new post with this tag 
+    $.ajax({
+      url:'https://xmdn.net/wp-json/wp/v2/posts',
+      method:'POST',
+      beforeSend: function(xhr)  {
+      xhr.setRequestHeader('X-WP-Nonce',hastart.nonce_1);
+    },
+    data:{
+      'title':title,
+      'content':content,
+      'tags':tagGroup,
+      'status':'publish',
+    },
+    success:function(res) {
+        console.log('Post created:', res);
+    },
+    error:function(err) {
+      swal("INTERNAL ERROR");
+    }
+
+    });
+  });
+
+  #part 3 
+  Promise.all(tagSlugs.map( slug => {
+                  return new Promise(function(resolve,reject) {
+
+                    $.ajax({
+              url: 'https://xmdn.net/wp-json/wp/v2/tags',
+              method:'GET',
+              data: { slug: slug },
+              dataType:'json',
+              success: res => {
+                if (res.length > 0) {
+                // 如果tag存在，跟名字符合，存储tagids提交的Tag的id
+                tagIds.push(res[0].id);
+              } else {
+                //如果不存在，发送tags 的post 请求 添加tags 
+                $.ajax({
+              url: 'https://xmdn.net/wp-json/wp/v2/tags',
+              method: 'POST',
+              beforeSend: function(xhr)  {
+                xhr.setRequestHeader('X-WP-Nonce',hastart.nonce_1);
+              },
+              data: {
+                name: slug,
+                slug: slug
+              },
+                }).done(function(response) {
+              tagIds.push(response.id);
+              console.log('success insert the tag');
+              console.log(tagIds);
+            }).fail(function(err) {
+              console.log(err);
+            });
+                  
+            }
+
+            resolve(res);
+              },
+              error:function(jqXHR, textStatus, errorThrown) {
+                reject(textStatus);
+              }
+
+            });
+
+                  }).then(function(results) {
+                    //all methods has finished
+                    //这里是apply 结束返回的res 
+      console.log('you have finished the request');
+      console.log(res);
+      console.log(tagIds);
+      //已经收到了的， 值是[233,233,455] 这种
+      console.log('ends here');
+
+        tagGroup = tagIds;
+      //create new post with this tag 
+      $.ajax({
+        url:'https://xmdn.net/wp-json/wp/v2/posts',
+        method:'POST',
+        beforeSend: function(xhr)  {
+        xhr.setRequestHeader('X-WP-Nonce',hastart.nonce_1);
+      },
+      data:{
+        'title':title,
+        'content':content,
+        'tags':tagGroup,
+        'status':'publish',
+      },
+      success:function(res) {
+          console.log('Post created:', res);
+      },
+      error:function(err) {
+        swal("INTERNAL ERROR");
+      }
+
+      });
+
+                  }).catch(function(error){
+
+                  });
+
+                }));
+
+
+                ##part 4 
+                const tagSlugs = tags;
+                //返回的是['klsadklsad', 'opisdpoisad']
+                const tagIds = [];
+
+                const promises = tagSlugs.map(function(slug) {
+                  return $.ajax({
+                    url: 'https://xmdn.net/wp-json/wp/v2/tags',
+                    data: { slug: slug },
+                    method: 'GET',
+                    dataType: 'json',
+                    success: res => {
+
+                      if (res.length > 0) {
+                          tagIds.push(res[0].id);
+                        } else {
+                          // Create a new tag with the specified slug
+                          $.ajax({
+                            url: 'https://www.xmdn.net/wp-json/wp/v2/tags',
+                            method: 'POST',
+                            beforeSend: function(xhr)  {
+                              xhr.setRequestHeader('Authorization',`Basic ${encodedCredentials}`);
+                            },
+                            data: {
+                              name: slug,
+                              slug: slug
+                            },
+                          }).done(function(res) {
+                            tagIds.push(res.id);
+                            console.log('Success insert the tag');
+                          }).fail(function(err) {
+                            console.log(err);
+                          });
+                        }
+                    },
+                    eroor: err => {
+                      console.log(err);
+
+                    }
+                  });
+                });
+
+                $.when.apply($, promises).done(function(responses) {
+                  // All promises have been resolved
+                  
+                    console.log('到底是什么res');
+                    console.log(tagIds);
+                    const tagGroup = Object.values(tagIds);
+                    console.log(tagGroup,'tags');
+                    
+                    // All tag requests have completed
+                    // Create a new post with the specified tags
+                    $.ajax({
+                      url:'https://www.xmdn.net/wp-json/wp/v2/posts',
+                      method:'POST',
+                      beforeSend: function(xhr)  {
+                        xhr.setRequestHeader('Authorization',`Basic ${encodedCredentials}`);
+                      },
+                      data:{
+                        title:title,
+                        content:content,
+                        tags:tagGroup,
+                        status:'publish',
+                      },
+                    }).done(function(response) {
+                      console.log('Post created:', response);
+                      //setTimeout(function(){location.reload();},1000);
+                    });
+
+                  console.log(responses,'this is the response');
+                }).fail(function(err) {
+                  // At least one promise was rejected
+                  console.error(err);
+                });

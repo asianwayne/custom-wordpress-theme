@@ -1,0 +1,288 @@
+.page-title {
+    font-size:4rem;
+    font-weight:bold;
+    margin-bottom:4rem;
+}
+ 
+/* LIST #3 */
+.page .list-cont { }
+.page .list-cont ul { list-style-image: url("images/right-arrow.svg"); color:#000; font-size:18px; }
+.page .list-cont ul li { line-height:30px;text-align:left }
+
+pre {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    clear: both;
+    color: #fff;
+    background: #1b1b1b;
+    padding: 0;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+    -ms-word-break: normal;
+    word-break: normal;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    position: relative;
+    line-height: 28px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+pre code {
+    scrollbar-color: #666 #201c29;
+    background: none;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    display: block;
+    max-width: 100%;
+    min-width: 100px;
+    font-size: 16px;
+    padding: 15px 20px 12px 22px;
+    line-height: 1.75;
+    text-align:left;
+}
+
+/* Light mode styles */
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+#top-banner {
+    position: fixed;
+    top: 0;
+    max-width: 1230px;
+    width:80%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f1f1f1;
+    text-align: center;
+    
+    z-index: 999;
+}
+
+.admin-bar #top-banner {
+   top: 32px;
+}
+
+#close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#close-button::before {
+    content: "";
+    background-image: url(../images/close.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+   /* Could be more or less, depending on screen size */
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-content {
+  width: 400px;
+  max-width: 100%;
+  
+}
+
+.modal-body {
+  width: 100%;
+  max-width: 400px;
+}
+
+input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+button#tougao-submit {
+     background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+}
+ 
+.tox-notification.tox-notification--in.tox-notification--warning {
+    display: none;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+.detail_article h2 {
+  margin-top: 24px;
+  
+}
+
+.dark-mode .index_cont .main_cont .article-list .summary,
+.dark-mode .index_cont .main_cont .article-list .cont .title,
+.dark-mode .slider_side ul li a,
+.dark-mode .header .nav-bar li a,
+.dark-mode .index_cont .sidebar .title,
+.dark-mode .index_cont .sidebar li a,
+.dark-mode .page-title
+ {
+  color: #fff;
+}
+.dark-mode .header {
+  background: black;
+}
+.dark-mode .detail_main h3,
+.dark-mode .detail_main 
+.detail_article,
+.dark-mode .detail_main p,
+.dark-mode .header .nav-bar ul li>ul li a {
+  color: #000;
+}
+
+.dark-mode .breadcrumb {
+  margin-bottom: 1rem;
+}
+.dark-mode .load-more {
+  color: #000;
+}
+
+.section-title {
+  text-align: center;  
+  font-size: 3rem;
+  text-align: center;
+  margin: 3rem auto;
+  font-weight: bold;
+  
+  padding-bottom: 0.5rem; /* Add some padding to the bottom */
+}
+
+.section-title span {
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+}
+
+.detail_main .detail_article, 
+.detail_main p,
+.detail_main h2
+ {
+  margin-bottom: 24px;
+}
+.detail_main h2 {
+  font-weight: bold;
+}
+#main_list .article-list .post_part {
+  min-height: 250px;
+}
+
+.index_cont .main_cont .article-list .cont .title {
+  white-space: normal;
+
+   }
+
+   .index_cont #main_part .article-list .summary {
+    max-height: 112px!important;
+   }
+
+   .detail_main h1 {
+    color: #000;
+   }
+
+
+.like-box {
+  padding: 1rem 0;
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
+  color: #000;
+}
+
+img.responsive {
+
+
+  max-width: 100%;
+}

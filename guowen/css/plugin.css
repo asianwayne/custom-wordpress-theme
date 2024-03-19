@@ -1,0 +1,31 @@
+.admin-bar .header-navigation {
+  top: 32px!important;
+}
+
+.marx.infosbox, .newsview {
+  position: relative;
+  z-index: 1;
+}
+.newsview .news_con p {
+  font-size: 20px;
+  line-height: 37px;
+  padding-bottom: 1px;
+  background: url(static/image/border.png) repeat;
+}
+.infosbox .imgtop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+.infosbox .imgfooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+.night .imgtop, .night .imgfooter {
+  opacity: 0;
+}

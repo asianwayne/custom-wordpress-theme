@@ -1,0 +1,85 @@
+/* AB模板网 整站模板下载 */
+/* 模板：Www.AdminBuy.Cn */
+/* 仿站：Fang.AdminBuy.Cn */
+/* 素材：Sc.AdminBuy.Cn */
+/* js特效：js.AdminBuy.Cn */
+/* QQ：9490489 */
+
+.ffr{float:right;}
+@media (min-width: 1200px){
+	.ffr{width:80%;}
+}
+.proshow{}
+.prolist{overflow:hidden;padding:0}
+.fr{float:right}
+.icon{display:inline-block;background:url(../images/icon1.png) no-repeat;vertical-align:middle}
+.prolist .item{position:relative;float:left;overflow:hidden;margin:26px 1%;width:31%;border:1px solid #ddd;background:#fff;transition:all ease .3s}
+.prolist .item a{display:block;width:100%}
+.prolist .item img{display:block;width:100%;}
+.prolist .item h3{overflow:hidden;padding:0 16px;height:68px;color:#952122;font-size:20px;line-height:68px;transition:all ease .3s}
+.prolist .item h3 span{margin-top:10px;width:160px;height:48px;border:1px solid #952122;background:#952122;color:#fff;text-align:center;font-weight:400;font-size:20px;line-height:48px;transition:all ease .3s}
+.prolist .item h3 span s{margin-right:5px;width:18px;height:18px;background-position:-142px -78px}
+.prolist .item:hover h3 span{background:#fff;color:#952122}
+.prolist .item:hover h3 span s{background-position:-120px -78px}
+.prolist .item .xcx{position:absolute;top:0;z-index:10;padding-top:17px;width:100%;height:75%;background:url(../images/black20.png) repeat 0 0;opacity:0;transition:all ease .3s}
+.prolist .item .xcx span{position:absolute;top:24px;left:0;z-index:10;display:block;width:100%;color:#333;text-align:center;font-size:16px}
+.prolist .item .xcx img{display:block;margin:0 auto;padding:35px 10px 10px;width:200px;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.2)}
+.prolist .item:hover{border-color:#fff;box-shadow:0 4px 8px rgba(0,0,0,.2)}
+.prolist .item:hover .xcx{left:0;opacity:1}
+@media screen and (max-width:760px) {
+.prolist .item{width:48%;height:auto;border:none;}
+.xcx{display:none;}
+.prolist .item h3{height:auto;text-align:center;font-size:16px;line-height:40px;}
+.prolist .item h3 span{width:100%;font-size:18px;height:40px;line-height:40px;}
+ }
+@media screen and (min-width:761px) and (max-width:1000px){
+.prolist .item{width:48%;}
+.xcx{display:none;}
+.prolist .item h3{height:auto;text-align:center;font-size:16px;line-height:40px;}
+.prolist .item h3 span{width:100%;font-size:18px;height:40px;line-height:40px;}
+}
+@media screen and (min-width:1001px) and (max-width:1200px){
+.prolist .item .xcx{height:77%;}
+.prolist .item .xcx img{width:160px;}
+.prolist .item h3 span{width:100px;font-size:16px;}
+}
+
+.swiper-button-next, .swiper-button-prev{
+	width:50px !important;height:140px !important;top:40% !important;background-color:rgba(0,0,0,.6);
+}
+
+.imgshow{overflow:hidden;}
+.imgshowl{width:66%;float:left;}
+.imgshowr{width:32%;float:right;}
+.imgshowr h1{text-align:left;font-size:24px;line-height:40px;margin-bottom:5px;}
+.imgshowr .price{text-align:left;font-size: 24px;color: #f16101;font-family: arial;line-height:40px;margin-bottom:5px;}
+.imgshowr .xcxm{width:238px;border:1px solid #ddd;border-radius:6px;}
+.xcxm img{display:block;width:236px;height:236px;border-bottom:1px solid #ddd;border-radius:6px;}
+.imgshowr .xcxm span{display:block;width:100%;height:46px;background:#ab0e2d;color:#fff;text-align:center;font-weight:700;font-size:20px;line-height:46px;}
+.imgshowr .tel{bottom:0;left:0;margin-top:20px;width:238px;height:44px;border:1px solid #ab0e2d;border-radius:2px;color:#ab0e2d;text-align:center;font-size:18px;line-height:44px;}
+.imgshowr .tel s{width:22px;height:22px;background-position:-166px -75px;}
+.imgshowr .icon{display:inline-block;background:url(../images/icon1.png) no-repeat;vertical-align:middle;}
+.cpjs{color:#d61919;text-indent:0!important;font-weight:700;font-size:20px;}
+.swiper-container{margin-right:auto;margin-left:auto;width:100%;height:100%;}
+.swiper-slide{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;background:#fff;text-align:center;font-size:18px;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;}
+.swiper-slide img{width:100%;}
+.imgshowm{display:none;}
+@media screen and (max-width:1000px){
+	#fh5co-content_show .navv li a{margin:6px 0;}
+	.imgshowl{width:100%;}
+	.imgshowr{display:none;}
+	.imgshowm{display:block;width:100%;float:left;}
+	.imgshowm .tit{margin:10px 0;}
+	.buy-tit{}
+	.buy-r{float:right;line-height:52px;}
+	.buy-r a {font-size: 1.6rem;color: #fff;background:#ab0e2d;padding: 12px 40px;}
+	.buy-r2{color:red;font-size:1.2rem;padding-right:25px;}
+	.buy-r2 b{color:#666;}
+}
+@media screen and (min-width:1001px) and (max-width:1200px){
+	.imgshowm{display:none;}
+	.imgshowr .price,.imgshowr h1{line-height:24px;font-size:18px;}
+	.imgshowr .xcxm{width:100%;}
+	.xcxm img{width:100%;height:auto;}
+	.imgshowr .tel{width:100%;margin-top:10px;}
+}
